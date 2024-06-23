@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "nombre": "Classic Cheese",
+        "precio": 2300,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, cheddar x2, medallon de carne, queso cheese, salsa de la casa.",
+        "foto": "./img/productoC/c1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Amerikan Onion",
+        "precio": 2300,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, medallon de carne, cebolla smasheada, cheddar x2.",
+        "foto": "./img/productoC/c2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Big fat",
+        "precio": 2300,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, medallon de carne, doble cheddar, beacon, salsa de la casa",
+        "foto": "./img/productoC/c3.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Cheese",
+        "precio": 2500,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan parmesano, doble cheddar, medallon de carne, salsa de la casa",
+        "foto": "./img/productoC/c4.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Cheese & Cebolla",
+        "precio": 2700,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, medallon de carne, doble cheddar, beacon, salsa de la casa, doble aro de cebolla",
+        "foto": "./img/productoC/c5.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Americana",
+        "precio": 2650,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, medallon de carne, cheddar x2, lechuga, tomate, salsa de la casa.",
+        "foto": "./img/productoC/c6.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Ruculin Simple",
+        "precio": 2400,
+        "tamaño": "simple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, cheddar x2, medallon de carne, rucula, cebolla morada, salsa de la casa.",
+        "foto": "./img/productoC/c7.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Classic Cheese",
+        "precio": 3100,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, cheddar x2, doble medallon de carne, queso cheese, salsa de la casa.",
+        "foto": "./img/productoC/c8.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Big fat",
+        "precio": 3100,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, doble medallon de carne, doble cheddar, beacon, salsa de la casa",
+        "foto": "./img/productoC/c9.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Cheese & Cebolla",
+        "precio": 3500,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, doble medallon de carne, doble cheddar, beacon, salsa de la casa",
+        "foto": "./img/productoC/c10.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Kemirabobo",
+        "precio": 3500,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, doble medallones de carne de, cuadrado de muzzarella rebozado, salsa napolitana, cheddar x2",
+        "foto": "./img/productoC/c11.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Baby Boomer",
+        "precio": 3600,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, cheddar x 2, doble medallon de carne, panceta crocante, salsa de la casa, huevo a la plancha.",
+        "foto": "./img/productoC/c12.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "Chiken Burguer",
+        "precio": 2900,
+        "tamaño": "doble",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, pepinillos, lechuga, doble medallon de carne, salsa de la casa.",
+        "foto": "./img/productoC/c13.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "Thousands of cheeses",
+        "precio": 4300,
+        "tamaño": "triple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, pepino, lechuga, tomate, cebolla, triple medallon de carne, cuadruple cheddar, salsa de la casa.",
+        "foto": "./img/productoC/c14.jpg"
+    },
+    {
+        "id": 15,
+        "nombre": "KI-FAT",
+        "precio": 4600,
+        "tamaño": "triple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa - sextuple cheddar- triple medallon de carne, lechuga, tomate, cebolla, beacon, salsa especial",
+        "foto": "./img/productoC/c15.jpg"
+    },
+    {
+        "id": 16,
+        "nombre": "Ruculin triple",
+        "precio": 4400,
+        "tamaño": "triple",
+        "cantidad": 0,
+        "descripcion": "Pan de papa, cheddar x2, triple medallon de carne, rucula, cebolla morada, salsa de la casa.",
+        "foto": "./img/productoC/c16.jpg"
+    },
+    {
+        "id": 17,
+        "nombre": "Cheese & Cebolla",
+        "precio": 4000,
+        "tamaño": "triple",
+        "cantidad": 0,
+        "descripcion": "Pan parmesano, doble cheddar, triple medallon de carne, salsa de la casa",
+        "foto": "./img/productoC/c17.jpg"
+    },
+    {
+        "id": 18,
+        "nombre": "La 420 BLANCA",
+        "precio": 5400,
+        "tamaño": "cuadruple",
+        "cantidad": 0,
+        "descripcion": "Pan parmesano, cuadruple medallon de carne, chedar en fetas x8, huevo frito, beacon, salsa de la casa.",
+        "foto": "./img/productoC/c18.jpg"
+    }
+]

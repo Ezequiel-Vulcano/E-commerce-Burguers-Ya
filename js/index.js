@@ -27,6 +27,96 @@ class Hamburguesas {
         }
     }
 
+    generar_tarjeta(){
+        let contenedorFinal = document.querySelector(".content-burguer2")
+        
+        let contenedor = document.createElement("div");
+        contenedor.setAttribute("class", "content-producto col-12 col-xl-6")
+
+        let container1 = document.createElement("div")
+        container1.setAttribute("class", "container-fluid")
+        
+        let row1 = document.createElement("div")
+        row1.setAttribute("class", "producto row")
+        
+        let imagenFondo = document.createElement("div")
+        imagenFondo.style.backgroundImage = `url('${this.foto}')`;        
+        imagenFondo.setAttribute("class", "hamburguesas--productos col-3 img-fluid")
+        imagenFondo.setAttribute("data-bs-toggle", "modal")
+        imagenFondo.setAttribute("data-bs-target", "#staticBackdrop")
+
+        let contenido = document.createElement("div")
+        contenido.setAttribute("class", "contenido col-9")
+        
+        let container2 = document.createElement("div")
+        container2.setAttribute("class", "container-fluid")
+        
+        //** separacion
+
+        let row2 = document.createElement("div")
+        row2.setAttribute("class", "row")
+
+        let titulo3 = document.createElement("h3")
+        titulo3.setAttribute("class", "col-xl-12")
+        titulo3.innerText = this.nombre
+        
+        let span1 = document.createElement("span")
+        span1.setAttribute("class", "col-xl-12 descripcion")
+        span1.innerText = this.descripcion
+        
+        let contenido2 = document.createElement("div")
+        contenido2.setAttribute("class", "contenido2 d-flex justify-content-center")
+        
+        //** separacion
+        
+        let hijo1 = document.createElement("div")
+        hijo1.setAttribute("class", "d-flex align-items-center")
+        
+        let span2 = document.createElement("span")
+        span2.setAttribute("class", "precio")
+        span2.innerText = this.precio
+        
+        let comprar = document.createElement("div")
+        comprar.setAttribute("class", "comprar m-2")
+        
+        let div1 = document.createElement("div")
+        div1.setAttribute("class", "quitar")
+
+        let quitar = document.createElement("span")
+        quitar.innerText = "-"
+
+        let div2 = document.createElement("div")
+
+        let cantidad = document.createElement("span")
+        cantidad.setAttribute("class", "cantidad")
+        cantidad.innerText = this.cantidad
+        
+        let div3 = document.createElement("div")
+        div3.setAttribute("class", "agregar")
+        
+        let agregar = document.createElement("span")
+        agregar.innerText = "+"
+
+        //*** AGREGO ELEMENTOS A LAS ETIQUETAS
+
+        div3.append(agregar)
+        div2.append(cantidad)
+        div1.append(quitar)
+        comprar.append(div3, div2, div1)
+
+        hijo1.append(comprar, span2)
+        contenido2.append(hijo1)
+
+        row2.append(titulo3, span1, contenido2 )
+        container2.append(row2)
+        contenido.append(container2)
+        
+        row1.append(imagenFondo, contenido)
+        container1.append(row1)
+        contenedor.append(container1)
+        
+        contenedorFinal.append(contenedor)
+    }
 }
 
 const gustos = [
@@ -77,6 +167,24 @@ let ofertas = [
 
 // CODIGO FUNCIONAL !!!!!!!
 
+//! CAMBIOS NUEVOS
+let contenedorFinal = document.querySelector(".content-burguer2")
+
+let botones_filtrar = document.querySelectorAll(".boton_filtrar");
+botones_filtrar.forEach((el)=> {
+    el.addEventListener("click", function(){
+        contenedorFinal.innerHTML = ""
+
+        let valor = el.getAttribute("set-tamaño")
+        generarCatalogo(valor)
+        console.log(valor)
+        //tamaño_burguer
+    })
+})
+
+
+
+//!
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -123,6 +231,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
+    //! CAMBIOS ***********
+    let tamaño_burguer = "simple"
+
+    generarCatalogo(tamaño_burguer)
+
+    //!
+
     gustos.forEach((hamburguesa, index) => {
         
         let contenedorFinal = document.querySelector(".content-burguer")
