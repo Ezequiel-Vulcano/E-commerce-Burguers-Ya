@@ -4,7 +4,12 @@ let datos = []
 let carrito2 = []
 let preciosAdicionales = [];
 
+
+//! CAMBIOS: Carrito para agregar productos
+const carrito_productos = []
+
 class Hamburguesas {
+
     constructor(id, nombre,precio,tamaño, cantidad, descripcion, foto){
         this.id = id
         this.nombre = nombre,
@@ -20,11 +25,7 @@ class Hamburguesas {
     }
 
     sacar(){
-        if (this.cantidad == 0) {
-            this.cantidad = 0
-        } else {
-            this.cantidad--
-        }
+        this.cantidad--
     }
 
     generar_tarjeta(){
@@ -116,6 +117,90 @@ class Hamburguesas {
         contenedor.append(container1)
         
         contenedorFinal.append(contenedor)
+
+        // EVENTO nº1 
+        // Agregar al carrito el producto
+        div3.addEventListener("click", () => {
+            this.agregar_al_carrito(this);
+        });
+
+
+        // EVENTO nº2
+        // Elimina el producto del carrito
+        div1.addEventListener("click", () =>{
+            this.quitar_del_carrito();
+        });
+    }
+
+    //! agregar_al_carrito: Sirve para que al clickear en el "div" con la class "agregar" revise mi array "carrito_productos" y si el producto no esta lo agregue y si el produco esta me incremente su cantidad.
+    //! el: este parametro seria "this" osea el elemento que selecciono de mi array
+    agregar_al_carrito(el) {
+        if(this.buscar_producto_carrito(this)){
+            this.incrementar()
+        } else {
+            this.incrementar()
+            carrito_productos.push(el)
+        }
+    }
+
+
+    //! quitar_del_carrito: Sirve para revisar en mi array "carrito_productos" si es que el producto ya lo tengo agregado y si lo tengo agregado me lo saca.
+    quitar_del_carrito(){
+        if(this.buscar_producto_carrito(this)){
+            if (this.cantidad == 0) {
+                //! Arreglar LUEGO
+            } else {
+                this.sacar()
+            }
+        } 
+    }
+
+
+    //! buscar_producto_carrito: Sirve para buscar en mi array "carrito_productos" si el producto que quiero agregar se encuentra agregado.
+    //! # return: Retorna "true" si el producto esta o "false" si el producto no esta.
+    buscar_producto_carrito(producto){
+        let producto_existente = carrito_productos.find(el => el.id == producto.id)
+        return producto_existente
+    }
+
+
+    //! alamacenar_carrito_localstorage: se ejecuta luego de actualizar las cantidades de los productos y se guarda una copia del "carrito_productos" en el localstorage.
+    //! #arreglo: es el carrito de productos que voy a almacenar en el localstorage.
+    alamacenar_carrito_localstorage(arreglo){
+        //! NOTAA para el futuro
+        /*
+            para que todo el sistema de carrito ande correctamente lo que debo hacer es:
+            
+            1) Apenas cargo un porducto o quito (agrego o quito de mi carrito) cargo en el localstorage
+            2) Para que las cantidades anden correctamente lo que puedo hacer es que cuando cargue mi objeto en la funcion que tengo del archivo funciones es ver si tengo un elemento que tenga el mismo id que en mi carrita. Si coinciden los id lo que debo hacer es que la cantidad sea igual a la del producto que tengo guardado en mi carrito asi siempre que relogee la pagina voy a tener las cantidades iguales y al incrementar y decrementar se va a actualizar todo sobre el JSON y siempre lo voy a tener actualizado.
+            3) Al mantener de esta manera el JSON siempre actualizado lo que voy a lograr es que la cantidad que se ve en la tarjeta dentro del doom este actualizada en tiempo real.
+
+            NOTA: Esta nota es como entendi que debo resolver esto y se lo comparti a CHATGPT
+            Osea en esta parte del codigo en resumen lo que estas haciendo es revisar en el localstorage los productos almacenados y estas comparando producto con producto y si coincide el id en el localstorage y en el json estas haciendo que la cantidad del json sea igual a la del localstorage no?
+
+            async function traerproductos() {
+                try {
+                    const response = await fetch("./js/productos.json");
+                    const productosData = await response.json();
+
+                    //! Verificar si ya hay productos almacenados en localStorage
+                    const productosLocalStorage = JSON.parse(localStorage.getItem('productos'));
+                    if (productosLocalStorage) {
+                        //! Actualizar las cantidades del JSON con las cantidades del localStorage
+                        productosData.forEach(producto => {
+                            const productoLocal = productosLocalStorage.find(p => p.id === producto.id);
+                            if (productoLocal) {
+                                producto.cantidad = productoLocal.cantidad;
+                            }
+                        });
+                    }
+
+                    return productosData;
+                } catch (error) {
+                    console.error('Error al cargar los productos:', error);
+                }
+            }
+        */
     }
 }
 
@@ -177,8 +262,6 @@ botones_filtrar.forEach((el)=> {
 
         let valor = el.getAttribute("set-tamaño")
         generarCatalogo(valor)
-        console.log(valor)
-        //tamaño_burguer
     })
 })
 

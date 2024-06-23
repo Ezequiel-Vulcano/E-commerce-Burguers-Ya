@@ -42,8 +42,6 @@ async function generarCatalogo(tamaño){
         el.foto
     ))
 
-    console.log(hamburguesa)
-
     hamburguesa.forEach(el => {
         el.generar_tarjeta()
     });
