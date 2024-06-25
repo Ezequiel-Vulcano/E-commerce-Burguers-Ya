@@ -6,7 +6,7 @@ let preciosAdicionales = [];
 
 
 //! CAMBIOS: Carrito para agregar productos
-const carrito_productos = []
+let carrito_productos = []
 
 class Hamburguesas {
 
@@ -137,9 +137,12 @@ class Hamburguesas {
     agregar_al_carrito(el) {
         if(this.buscar_producto_carrito(this)){
             this.incrementar()
+            this.alamacenar_carrito_localstorage(carrito_productos)
+
         } else {
             this.incrementar()
             carrito_productos.push(el)
+            this.alamacenar_carrito_localstorage(carrito_productos)
         }
     }
 
@@ -166,7 +169,19 @@ class Hamburguesas {
 
     //! alamacenar_carrito_localstorage: se ejecuta luego de actualizar las cantidades de los productos y se guarda una copia del "carrito_productos" en el localstorage.
     //! #arreglo: es el carrito de productos que voy a almacenar en el localstorage.
+    //! #burguer_agregar: es la burguer que se selecciono para poder almacenarla en el json.
     alamacenar_carrito_localstorage(arreglo){
+
+            localStorage.setItem("carrito_burguers", JSON.stringify(arreglo));
+
+            /*
+            const recupero_json = localStorage.getItem("carrito_burguers");
+            const objeto_recuperado = JSON.parse(recupero_json);
+
+            const array_combinado = arreglo.concat(objeto_recuperado);
+            */
+
+
         //! NOTAA para el futuro
         /*
             para que todo el sistema de carrito ande correctamente lo que debo hacer es:
@@ -270,6 +285,13 @@ botones_filtrar.forEach((el)=> {
 //!
 
 document.addEventListener("DOMContentLoaded", () => {
+    //! PARTE DE MIS ULTIMOS CAMBIOS
+    verificarJson()
+
+
+
+
+    //! PARTE DE MIS ULTIMOS CAMBIOS
 
     let temporizador;
     let modalCompleta = document.querySelector(".modal__propia")

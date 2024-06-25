@@ -26,7 +26,27 @@ async function traerproductos(){
 */
 async function generarCatalogo(tamaño){
     
+    // TRAIGO EL JSON PARA COMPARAR Y PASAR LAS HAMBURGUESAS CON LAS CANTIDADES ACTUALIZADAS
+
+    const recupero_json = localStorage.getItem("carrito_burguers");
+    const objeto_recuperado = JSON.parse(recupero_json);
+    console.log(objeto_recuperado)
+
     let articulo = await traerproductos();
+
+    if(objeto_recuperado) {
+        articulo.forEach(el => {
+        
+            const itemLocalStorage = objeto_recuperado.find(item => item.id === el.id);
+            if(itemLocalStorage) {
+                el.cantidad = itemLocalStorage.cantidad;
+            }
+    
+        })
+    }
+    
+
+    console.log(articulo)
 
     // Filtrar productos por tamaño
     let producto_filtrado = articulo.filter(el => el.tamaño == tamaño)
@@ -45,4 +65,14 @@ async function generarCatalogo(tamaño){
     hamburguesa.forEach(el => {
         el.generar_tarjeta()
     });
+}
+
+
+//! #verificarJson: Funcion que se encarga de revisar si mi json hay algo guardado apenas cargo la pagina, si lo hay actualiza mi objeto carrito para que sea igual a esto.
+function verificarJson(){
+    if(localStorage.getItem("carrito_burguers")){
+        const recupero_json = localStorage.getItem("carrito_burguers");
+        const objeto_recuperado = JSON.parse(recupero_json);
+        carrito_productos = objeto_recuperado
+    }
 }
